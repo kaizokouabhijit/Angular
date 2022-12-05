@@ -1,0 +1,18 @@
+<h2 class="text-success"> Regular CSS styling</h2>
+
+<h2 [ngClass]="{'text-primary':'true'}"> We have to set css .class:true when we use  ngClass to set the style</h2>
+<h3 [ngClass] ="{'text-danger':'true'}">Using ngClass and setting the color dynamically based on country</h3>
+<ul *ngFor="let person of people">
+
+
+     
+
+    <!-- We decide the color based on the boolean value returned by the person.country -->
+    <li [ngClass]="{
+    'text-success':person.country === 'UK',
+    'text-primary':person.country === 'USA',
+    'text-danger':person.country === 'HK'
+    }">
+    {{ person.name }} ({{ person.country }})
+    </li>
+  </ul>

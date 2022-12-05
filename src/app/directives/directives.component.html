@@ -1,0 +1,12 @@
+<p>directives works!</p>
+
+<p>Demo of ngFor</p>
+
+<ul>
+    <li *ngFor="let emp in employees">
+        Code:{{emp.code}} Name:{{emp.name}} 
+        <ul *ngIf="showAddress">
+            <li>City:{{emp.address.City}}</li>
+        </ul>
+    </li>
+</ul>

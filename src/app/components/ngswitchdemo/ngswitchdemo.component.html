@@ -1,0 +1,21 @@
+<p>ngswitchdemo works!</p>
+
+<ul *ngFor ='let person of people' [ngSwitch]="person.country">
+    <li *ngSwitchCase="'UK'" class="text-success">
+        Name : {{person.name}}
+
+    </li>
+    <li *ngSwitchCase="'USA'" class="text-primary">
+        Name : {{person.name}}
+
+    </li>
+    <li *ngSwitchCase="'MARS'" class="text-danger">
+        Name : {{person.name}}
+
+    </li>
+    <li *ngSwitchCase="'HK'" class="text-warning">
+        Name : {{person.name}}
+
+    </li>
+</ul>
+

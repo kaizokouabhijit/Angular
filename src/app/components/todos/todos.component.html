@@ -1,0 +1,27 @@
+
+ <table style="border: 2px solid black;">
+
+    <tr >
+        <th>User ID</th>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Completed</th>
+       
+
+
+    </tr>
+
+    <tr *ngFor="let prod of todos">
+
+        <td>{{prod.userId}}</td>
+        <td>{{prod.id}}</td>
+        <td>{{prod.title}}</td>
+        <td>{{prod.completed}}</td>
+        
+        <!-- <td><input type="button" class="btn" [ngStyle]="{'background-color':'black', 'color':'antiquewhite'}" value="delete" (click)="deleteRecord(prod.code)"></td>
+        <td><input type="button" class="btn" [ngStyle]="{'background-color':'black', 'color':'antiquewhite'}" value="Update" (click)="updateRecord(prod.code)"></td>
+         -->
+
+
+    </tr>
+</table>

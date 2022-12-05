@@ -1,0 +1,60 @@
+
+
+
+<body [ngStyle] ="{'background-color':'rgb(167 167 69)'}">
+    <h2>Product Master</h2>
+    
+<div class="container" [ngStyle] ="{'background-color':'rgb(144 144 35)'}" >
+    <table>
+<label for="code">Code : </label><br>
+<input type="number" name="code" [(ngModel)]="prod.code"><br>
+<label for="name">Name : </label><br>
+<input type="text" name="name"[(ngModel)]="prod.name"><br>
+<label for="desc">Description : </label><br>
+<input type="text" name="desc"[(ngModel)]="prod.desc"><br>
+<label for="manu">Manufacturer : </label><br>
+<input type="text" name="manu"[(ngModel)]="prod.manu"><br>
+<label for="price">Price : </label><br>
+<input type="number" name="price" [(ngModel)]="prod.price"><br>
+
+<button [disabled]="isEdit" class="btn" [ngStyle]="{'background-color':'black', 'color':'antiquewhite'}" type="submit" (click)="addProduct()"> {{btnTitle}}</button>
+<button  class="btn" [ngStyle]="{'background-color':'black', 'color':'antiquewhite'}" type="submit" (click)="addProduct()"> {{btnTitle}}</button>
+
+</table>
+<!-- <button type="submit" (click)="updateValue()"> Update Product</button> -->
+</div>
+
+<div class="container" [ngStyle] ="{'background-color':'rgb(144 144 35)'}" *ngIf="product.length>0">
+
+    <table style="border: 2px solid black;">
+
+        <tr >
+            <th>Code</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Manufacturer</th>
+            <th>Price</th>
+
+
+        </tr>
+
+        <tr *ngFor="let prod of product">
+
+            <td>{{prod.code}}</td>
+            <td>{{prod.name}}</td>
+            <td>{{prod.desc}}</td>
+            <td>{{prod.manu}}</td>
+            <td>{{prod.price}}</td>
+            <td><input type="button" class="btn" [ngStyle]="{'background-color':'black', 'color':'antiquewhite'}" value="delete" (click)="deleteRecord(prod.code)"></td>
+            <td><input type="button" class="btn" [ngStyle]="{'background-color':'black', 'color':'antiquewhite'}" value="Update" (click)="updateRecord(prod.code)"></td>
+            
+
+
+        </tr>
+    </table>
+</div>
+
+
+
+    
+</body>

@@ -1,0 +1,8 @@
+<h1 style="color:blue"> This is regular way</h1>
+
+<h2 [ngStyle] ="{'color': 'red'}"> I set the ngStyle directly  in html</h2>
+
+<ul *ngFor="let person of people">
+    <li [style.color]="getColor(person.country)">{{ person.name }} ({{ person.country }})
+    </li>
+  </ul>
